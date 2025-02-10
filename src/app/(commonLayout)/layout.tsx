@@ -6,7 +6,7 @@ const CommonLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="">
       <CommonSidebar />
-      <div className="ml-96">
+      <div className="ml-96 lg:ml-[600px]">
         <Navbar />
         {children}
       </div>

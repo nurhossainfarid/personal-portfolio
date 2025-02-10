@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ModeToggle } from "../ModeToggle";
+import Link from "next/link";
 
 const CommonSidebarHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +23,28 @@ const CommonSidebarHeader = () => {
 
       {/*Menu */}
       {isOpen && (
-        <div className="absolute left-0 w-full bg-white/50 dark:bg-gray-900 shadow-md p-4 flex flex-col gap-4 z-10">
-          <li>A</li>
-          <li>B</li>
-          <li>C</li>
+        <div className="absolute left-0 w-full bg-black dark:bg-gray-900 shadow-md p-4 flex flex-col gap-4 z-10">
+          <Link href="/" className="block py-2 px-4 hover:bg-gray-700 rounded">
+            Home
+          </Link>
+          <Link
+            href="/projects"
+            className="block py-2 px-4 hover:bg-gray-700 rounded"
+          >
+            Projects
+          </Link>
+          <Link
+            href="/blog"
+            className="block py-2 px-4 hover:bg-gray-700 rounded"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/contact"
+            className="block py-2 px-4 hover:bg-gray-700 rounded"
+          >
+            Contact
+          </Link>
         </div>
       )}
     </div>
