@@ -10,6 +10,7 @@ export const handleTheme = (theme: string) => {
   let bgColor;
   if (theme === "dark" || theme === "system") {
     textColor = "white";
+    bgColor = "black";
   } else {
     textColor = "black";
     bgColor = "white";

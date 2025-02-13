@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { handleTheme } from "@/lib/utils";
+import { cn, handleTheme } from "@/lib/utils";
 import {
   ChevronsUpDown,
   GraduationCap,
@@ -31,19 +31,43 @@ const skills = [
   { name: "MongoDB", level: 80 },
 ];
 
+const projects = [
+  {
+    title: "Project One",
+    description: "Description for project one.",
+    url: "https://example.com/project-one",
+  },
+  {
+    title: "Project Two",
+    description: "Description for project two.",
+    url: "https://example.com/project-two",
+  },
+  {
+    title: "Project Three",
+    description: "Description for project three.",
+    url: "https://example.com/project-three",
+  },
+];
+
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMoreMe, setIsMoreMe] = useState("my-skills");
   const { theme } = useTheme();
   const { textColor } = handleTheme(theme as string);
+  console.log(textColor);
   const toggleReadMore = () => {
     setIsExpanded(!isExpanded);
   };
   return (
     <div className="flex flex-col gap-5">
       {/* About me */}
-      <div className={`flex flex-col mt-10 text-${textColor} px-10`}>
+      <div
+        className={cn(
+          `flex flex-col mt-10 px-10`,
+          textColor && `text-${textColor}`
+        )}
+      >
         <div>
           <h1 className="text-3xl font-bold font-roboto">ABOUT ME</h1>
           <hr className="border-primary/50" />
@@ -130,7 +154,13 @@ export default function Home() {
       </div>
       {/* More About Me */}
       <div
-        className={`${theme === "dark" ? "bg-gray-900" : "bg-[#F5F5F5]"} py-10`}
+        className={cn(
+          `${
+            theme === "dark" || theme === "system"
+              ? "bg-gray-900"
+              : "bg-[#F5F5F5]"
+          } py-10`
+        )}
       >
         <div className="px-10">
           <h1 className="text-3xl font-bold font-roboto">MORE ABOUT ME</h1>
@@ -337,6 +367,36 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      {/* Projects */}
+      <div className={`flex flex-col py-10 text-${textColor} px-10 `}>
+        <h2 className="text-2xl font-bold font-roboto">Projects</h2>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 ">
+          {
+            // Projects
+            projects.map((project, index) => (
+              <div key={index} className="flex flex-col gap-2">
+                <h3 className="text-lg font-semibold font-roboto">
+                  {project.title}
+                </h3>
+                <p className="opacity-70">{project.description}</p>
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  <Button className="hover:underline text-sm">
+                    View Project
+                  </Button>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+        <Link href="/projects" className="text-center">
+          <Button
+            variant={"outline"}
+            className="mt-5 hover:bg-primary hover:text-white"
+          >
+            View More Projects
+          </Button>
+        </Link>
       </div>
     </div>
   );

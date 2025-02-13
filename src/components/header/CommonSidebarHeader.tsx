@@ -23,7 +23,7 @@ const CommonSidebarHeader = () => {
 
       {/*Menu */}
       {isOpen && (
-        <div className="absolute left-0 w-full bg-black dark:bg-gray-900 shadow-md p-4 flex flex-col gap-4 z-10">
+        <div className="absolute left-0 w-full bg-black dark:bg-gray-900 shadow-md p-4 flex flex-col gap-4 z-50">
           <Link href="/" className="block py-2 px-4 hover:bg-gray-700 rounded">
             Home
           </Link>
