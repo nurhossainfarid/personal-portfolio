@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { cn, handleTheme } from "@/lib/utils";
 import {
-  ChevronsUpDown,
   GraduationCap,
   Mail,
   Phone,
@@ -55,7 +54,7 @@ export default function Home() {
   const [isMoreMe, setIsMoreMe] = useState("my-skills");
   const { theme } = useTheme();
   const { textColor } = handleTheme(theme as string);
-  console.log(textColor);
+
   const toggleReadMore = () => {
     setIsExpanded(!isExpanded);
   };
@@ -68,8 +67,10 @@ export default function Home() {
           textColor && `text-${textColor}`
         )}
       >
-        <div>
-          <h1 className="text-3xl font-bold font-roboto">ABOUT ME</h1>
+        <div className="">
+          <h1 className="text-3xl font-bold font-roboto bg-text-gradient-light bg-clip-text text-transparent inline-block">
+            ABOUT ME
+          </h1>
           <hr className="border-primary/50" />
         </div>
         <div className="flex gap-10 py-5">
@@ -163,7 +164,9 @@ export default function Home() {
         )}
       >
         <div className="px-10">
-          <h1 className="text-3xl font-bold font-roboto">MORE ABOUT ME</h1>
+          <h1 className="text-3xl font-bold font-roboto bg-text-gradient-light bg-clip-text text-transparent inline-block">
+            MORE ABOUT ME
+          </h1>
           <hr className="border-primary/50" />
           <div className="flex gap-10 mt-10 border-2">
             {/* More about me sidebar */}
@@ -370,7 +373,9 @@ export default function Home() {
       </div>
       {/* Projects */}
       <div className={`flex flex-col py-10 text-${textColor} px-10 `}>
-        <h2 className="text-2xl font-bold font-roboto">Projects</h2>
+        <h2 className="text-3xl font-bold font-roboto bg-text-gradient-light bg-clip-text text-transparent inline-block">
+          Projects
+        </h2>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 ">
           {
             // Projects

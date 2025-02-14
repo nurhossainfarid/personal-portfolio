@@ -15,6 +15,10 @@ export default {
         outfit: ["Outfit", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
+      backgroundImage: {
+        "text-gradient-light":
+          "linear-gradient(90deg, #F2784B 0%, #F4A07B 100%)",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -50,6 +54,8 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        "electric-indigo": "#8750f7",
+        "dark-purple": "#2a1454",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
