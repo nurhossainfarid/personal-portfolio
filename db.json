@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-        "id": "p1",
+      "id": "p1",
       "title": "CycleZen - Bicycle Store",
       "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255498/cycleZen_zdher1.png",
       "description": "CycleZen is your go-to online store for top-quality bicycles, accessories, and gear. From road and mountain bikes to electric and hybrid options, we offer premium products at great prices. Enjoy a seamless shopping experience with secure payments and fast delivery. Ride smarter, ride greener—shop CycleZen today! This project is an Express.js application developed with TypeScript that integrates MongoDB using Mongoose to manage a comprehensive Bicycle Store. The application is designed to streamline inventory management, handle customer orders, and calculate revenue while ensuring data integrity through robust schema validation.",
@@ -27,7 +27,7 @@
       "id": "p2",
       "title": "Save Stella_3024",
       "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255498/save_stealla_igi5b6.png",
-      "description": "Save Stella_3024 is an educational game created by Team Orbvengers for NASA's Space Apps Challenge 2024. Our game "Save Stella_3024" is an educational game designed to raise environmental awareness. Players solve real-world ecological issues like pollution and climate change using GLOBE protocol data and machine learning. Set in a future Earth, players must restore balance by addressing crises in the Pedosphere (soil), Hydrosphere (water), Biosphere (living organisms), and Atmosphere (air). Real-time NASA Worldview mapping enhances gameplay with live environmental data. Learning about science can be a fun experience! Our Games that focus on science and environmental issues can create opportunities for players to develop their interests and gain knowledge while engaging with each other in a fun way.",
+      "description": "Save Stella_3024 is an educational game created by Team Orbvengers for NASA's Space Apps Challenge 2024. Our game 'Save Stella_3024' is an educational game designed to raise environmental awareness. Players solve real-world ecological issues like pollution and climate change using GLOBE protocol data and machine learning. Set in a future Earth, players must restore balance by addressing crises in the Pedosphere (soil), Hydrosphere (water), Biosphere (living organisms), and Atmosphere (air). Real-time NASA Worldview mapping enhances gameplay with live environmental data. Learning about science can be a fun experience! Our Games that focus on science and environmental issues can create opportunities for players to develop their interests and gain knowledge while engaging with each other in a fun way.",
       "github": "https://github.com/nurhossainfarid/globe-protocol-game",
       "live": "https://stella3024-orbvengers.netlify.app/",
       "features": [
@@ -47,94 +47,94 @@
       }
     },
     {
-        "id": "p3",
-        "title": "Burger Hunter - Ultimate Burger Finder",
-        "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255499/food-site_ddixo5.png",
-        "description": "Burger Hunter is the ultimate platform for burger lovers! Discover the best burgers near you, browse menus, read reviews, and find exclusive deals on delicious burgers. Whether you're craving a classic cheeseburger or a gourmet specialty, Burger Hunter has got you covered.",
-        "github": "https://github.com/demo/burger-hunter",
-        "live": "https://webfinalproject.netlify.app/",
-        "features": [
-          "Find the best-rated burgers near your location.",
-          "Explore detailed menus with ingredients and pricing.",
-          "Read and leave reviews for different burger joints.",
-          "Direct ordering from partnered restaurants.",
-          "GPS-powered search to find nearby burger spots.",
-          "Get access to discounts and exclusive burger deals."
-        ],
-        "technologies": {
-          "frontend": "React.js, Tailwind CSS, Swiper.js",
-          "backend": "Node.js, Express.js, MongoDB",
-          "database": "MongoDB",
-          "paymentGateway": "ShurjoPay",
-          "deployment": "Netlify"
-        }
+      "id": "p3",
+      "title": "Burger Hunter - Ultimate Burger Finder",
+      "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255499/food-site_ddixo5.png",
+      "description": "Burger Hunter is the ultimate platform for burger lovers! Discover the best burgers near you, browse menus, read reviews, and find exclusive deals on delicious burgers. Whether you're craving a classic cheeseburger or a gourmet specialty, Burger Hunter has got you covered.",
+      "github": "https://github.com/demo/burger-hunter",
+      "live": "https://webfinalproject.netlify.app/",
+      "features": [
+        "Find the best-rated burgers near your location.",
+        "Explore detailed menus with ingredients and pricing.",
+        "Read and leave reviews for different burger joints.",
+        "Direct ordering from partnered restaurants.",
+        "GPS-powered search to find nearby burger spots.",
+        "Get access to discounts and exclusive burger deals."
+      ],
+      "technologies": {
+        "frontend": "React.js, Tailwind CSS, Swiper.js",
+        "backend": "Node.js, Express.js, MongoDB",
+        "database": "MongoDB",
+        "paymentGateway": "ShurjoPay",
+        "deployment": "Netlify"
+      }
     },
     {
-        "id": "p4",
-        "title": "MyUniversity - Student Portal",
-        "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255494/myUniversity_jq6z7o.png",
-        "description": "MyUniversity is a comprehensive student portal designed to streamline academic management. It allows students to view courses, track their progress, interact with faculty, and access university resources in one centralized platform.",
-        "github": "https://github.com/nurhossainfarid/myuniversity-client",
-        "live": "https://myuniversity.netlify.app/",
-        "features": [
-          "User-friendly dashboard for students and faculty.",
-          "Course enrollment and progress tracking.",
-          "Digital library and resource access.",
-          "Announcements and event notifications.",
-          "Secure login and role-based access control.",
-          "Online assignment submission and grading system."
-        ],
-        "technologies": {
-          "frontend": "React.js,Typescript, Redux, Ant Design, JWT",
-          "backend": "Node.js, Express.js, Typescript, JWT",
-          "database": "MongoDB, Mongoose",
-          "paymentGateway": "",
-          "deployment": "Vercel"
-        }
+      "id": "p4",
+      "title": "MyUniversity - Student Portal",
+      "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255494/myUniversity_jq6z7o.png",
+      "description": "MyUniversity is a comprehensive student portal designed to streamline academic management. It allows students to view courses, track their progress, interact with faculty, and access university resources in one centralized platform.",
+      "github": "https://github.com/nurhossainfarid/myuniversity-client",
+      "live": "https://myuniversity.netlify.app/",
+      "features": [
+        "User-friendly dashboard for students and faculty.",
+        "Course enrollment and progress tracking.",
+        "Digital library and resource access.",
+        "Announcements and event notifications.",
+        "Secure login and role-based access control.",
+        "Online assignment submission and grading system."
+      ],
+      "technologies": {
+        "frontend": "React.js,Typescript, Redux, Ant Design, JWT",
+        "backend": "Node.js, Express.js, Typescript, JWT",
+        "database": "MongoDB, Mongoose",
+        "paymentGateway": "",
+        "deployment": "Vercel"
+      }
     },
     {
-        "id": "p5",
-        "title": "Hotchpotch Innovations - Frontend Task",
-        "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255494/hotspot-website_hxxyhl.png",
-        "description": "A frontend task for Hotchpotch Innovations, implementing a dynamic and responsive UI using modern web technologies. The project focuses on an interactive user experience with smooth navigation, optimized performance, and modular components.",
-        "github": "https://github.com/nurhossainfarid/hotchpotch-innovations-frontend-task",
-        "live": "https://hotchpotch-innovations-frontend-task.vercel.app/",
-       "features": [
-          "Responsive and visually appealing UI",
-          "State management using Redux for efficient data flow",
-          "API integration for dynamic content rendering",
-          "Reusable and modular component architecture",
-          "Optimized performance with lazy loading and code splitting",
-          "Dark mode toggle for enhanced accessibility"
-        ],
-        "technologies": {
-          "frontend": "React.js, TypeScript, Redux Toolkit, Tailwind CSS, Ant Design",
-          "backend": "None (Frontend-only project)",
-          "database": "None",
-          "deployment": "Vercel"
-        }
+      "id": "p5",
+      "title": "Hotchpotch Innovations - Frontend Task",
+      "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255494/hotspot-website_hxxyhl.png",
+      "description": "A frontend task for Hotchpotch Innovations, implementing a dynamic and responsive UI using modern web technologies. The project focuses on an interactive user experience with smooth navigation, optimized performance, and modular components.",
+      "github": "https://github.com/nurhossainfarid/hotchpotch-innovations-frontend-task",
+      "live": "https://hotchpotch-innovations-frontend-task.vercel.app/",
+      "features": [
+        "Responsive and visually appealing UI",
+        "State management using Redux for efficient data flow",
+        "API integration for dynamic content rendering",
+        "Reusable and modular component architecture",
+        "Optimized performance with lazy loading and code splitting",
+        "Dark mode toggle for enhanced accessibility"
+      ],
+      "technologies": {
+        "frontend": "React.js, TypeScript, Redux Toolkit, Tailwind CSS, Ant Design",
+        "backend": "None (Frontend-only project)",
+        "database": "None",
+        "deployment": "Vercel"
+      }
     },
     {
-        "id": "p6",
-        "title": "Everything Starts with Water",
-        "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255495/water-giftOfEart_pku6hq.png",
-        "description": "Everything Starts with Water is an educational and environmental awareness platform that highlights the importance of water conservation. The platform provides interactive content, real-world data, and community-driven initiatives to promote sustainable water management practices.",
-        "github": "https://github.com/nurhossainfarid/everything-starts-with-water-client",
-        "live": "https://watertheearthgift.netlify.app/",
-        "features": [
-          "Interactive data visualizations on water usage",
-          "Educational resources on water conservation",
-          "Community forum for discussions and initiatives",
-          "Real-time updates on water quality and availability",
-          "User-friendly UI with responsive design",
-          "Dark mode for better accessibility"
-        ],
-        "technologies": {
-          "frontend": "React.js, TypeScript, Tailwind CSS, Chart.js",
-          "backend": "Node.js, Express.js",
-          "database": "MongoDB",
-          "deployment": "Vercel"
-        }
+      "id": "p6",
+      "title": "Everything Starts with Water",
+      "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255495/water-giftOfEart_pku6hq.png",
+      "description": "Everything Starts with Water is an educational and environmental awareness platform that highlights the importance of water conservation. The platform provides interactive content, real-world data, and community-driven initiatives to promote sustainable water management practices.",
+      "github": "https://github.com/nurhossainfarid/everything-starts-with-water-client",
+      "live": "https://watertheearthgift.netlify.app/",
+      "features": [
+        "Interactive data visualizations on water usage",
+        "Educational resources on water conservation",
+        "Community forum for discussions and initiatives",
+        "Real-time updates on water quality and availability",
+        "User-friendly UI with responsive design",
+        "Dark mode for better accessibility"
+      ],
+      "technologies": {
+        "frontend": "React.js, TypeScript, Tailwind CSS, Chart.js",
+        "backend": "Node.js, Express.js",
+        "database": "MongoDB",
+        "deployment": "Vercel"
+      }
     }
   ],
   "blogs": [
