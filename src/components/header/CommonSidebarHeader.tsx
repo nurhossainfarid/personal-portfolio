@@ -34,7 +34,7 @@ const CommonSidebarHeader = () => {
             Projects
           </Link>
           <Link
-            href="/blog"
+            href="/blogs"
             className="block py-2 px-4 hover:bg-gray-700 rounded"
           >
             Blog

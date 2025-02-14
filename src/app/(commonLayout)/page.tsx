@@ -63,7 +63,7 @@ export default function Home() {
       {/* About me */}
       <div
         className={cn(
-          `flex flex-col mt-10 px-10`,
+          `flex flex-col p-10`,
           textColor && `text-${textColor}`
         )}
       >
