@@ -2764,15 +2764,17 @@ performance-now@^2.1.0:
     "@radix-ui/react-popover" "^1.1.6"
     "@radix-ui/react-progress" "^1.1.2"
     "@radix-ui/react-slot" "^1.1.2"
+    "@reduxjs/toolkit" "^2.5.1"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
     json-server "^1.0.0-beta.3"
     lucide-react "^0.475.0"
     next "15.1.6"
     next-themes "^0.4.4"
-    personal-portfolio-client "file:C:/Users/AORUS/AppData/Local/Yarn/Cache/v6/npm-personal-portfolio-client-0.1.0-8b23d3e2-a44c-4dbe-9679-0cc443a8d721-1739538258583/node_modules/personal-portfolio-client"
+    personal-portfolio-client "file:C:/Users/AORUS/AppData/Local/Yarn/Cache/v6/npm-personal-portfolio-client-0.1.0-b74f8b04-5980-49fe-97e5-d1f1b9194c2c-1739543572474/node_modules/personal-portfolio-client"
     react "^19.0.0"
     react-dom "^19.0.0"
+    react-redux "^9.2.0"
     tailwind-merge "^3.0.1"
     tailwindcss-animate "^1.0.7"
     typewriter-effect "^2.21.0"
@@ -2901,6 +2903,11 @@ react-dom@^19.0.0:
   integrity sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==
   dependencies:
     scheduler "^0.25.0"
+
+react-icons@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.4.0.tgz#443000f6e5123ee1b21ea8c0a716f6e7797f7416"
+  integrity sha512-7eltJxgVt7X64oHh6wSWNwwbKTCtMfK35hcjvJS0yxEAhPM8oUKdS3+kqaW1vicIltw+kR2unHaa12S9pPALoQ==
 
 react-is@^16.13.1:
   version "16.13.1"

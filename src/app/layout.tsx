@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Roboto, Raleway } from "next/font/google";
+import Providers from "@/lib/Providers";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 const raleway = Raleway({ subsets: ["latin"] });
@@ -17,17 +18,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${roboto.className} ${raleway.className}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <Providers>
+      <html lang="en">
+        <body className={`${roboto.className} ${raleway.className}`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </Providers>
   );
 }

@@ -5,7 +5,7 @@ const useBlogApi = baseApi.injectEndpoints({
     getAllBlog: builder.query({
       query: () => {
         return {
-          url: "/blog",
+          url: "/blogs",
           method: "GET",
         };
       },
