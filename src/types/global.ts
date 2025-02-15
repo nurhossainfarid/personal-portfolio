@@ -27,3 +27,20 @@ export interface Blog {
   blog_image: string;
   total_likes: string;
 }
+
+export interface Project {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
+  github: string;
+  live: string;
+  features?: string[];
+  technologies: {
+    frontend?: string;
+    backend?: string;
+    database?: string;
+    paymentGateway?: string;
+    deployment?: string;
+  };
+}

@@ -18,6 +18,8 @@ export default {
       backgroundImage: {
         "text-gradient-light":
           "linear-gradient(90deg, #F2784B 0%, #F4A07B 100%)",
+        "text-gradient-dark":
+          "linear-gradient(90deg, #F4A07B 0%, #F2784B 100%)",
       },
       colors: {
         background: "hsl(var(--background))",

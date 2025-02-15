@@ -1,11 +1,18 @@
 import { Blog } from "@/types/global";
 import Image from "next/image";
+import Link from "next/link";
 import { AiFillLike } from "react-icons/ai";
-import { FaCalendar } from "react-icons/fa";
+import { FaArrowAltCircleLeft, FaCalendar } from "react-icons/fa";
+import { Button } from "../ui/button";
 
-const BlogDetailsCard = ({ blog }: { blog: Blog }) => {
+const BlogDetailsCart = ({ blog }: { blog: Blog }) => {
   return (
     <div className="p-10">
+      <Link href="/blogs">
+        <Button className="text-lg">
+          <FaArrowAltCircleLeft /> Previous
+        </Button>
+      </Link>
       <p className="flex items-center justify-center text-white bg-primary w-fit px-3 py-1 rounded-full">
         <FaCalendar className="mr-2" />
         {blog.publish_date}
@@ -13,7 +20,7 @@ const BlogDetailsCard = ({ blog }: { blog: Blog }) => {
       <h2 className="text-3xl font-bold font-roboto bg-text-gradient-light bg-clip-text text-transparent inline-block my-5">
         {blog.title}
       </h2>
-      <div className="flex items-center justify-center bg-gray-100 mb-5 py-2 rounded-lg gap-2">
+      <div className="flex items-center justify-center bg-gray-100 mb-8 py-3 rounded-lg gap-2">
         <Image
           src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
           width={30}
@@ -52,4 +59,4 @@ const BlogDetailsCard = ({ blog }: { blog: Blog }) => {
   );
 };
 
-export default BlogDetailsCard;
+export default BlogDetailsCart;

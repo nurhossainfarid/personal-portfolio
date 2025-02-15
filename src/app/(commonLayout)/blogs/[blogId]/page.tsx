@@ -1,34 +1,12 @@
-import BlogDetailsCard from "@/components/shared/BlogDetailsCard";
-import { Blog } from "@/types/global";
+"use client";
 
-export const generateStaticParams = async () => {
-  const res = await fetch("http://localhost:5000/blogs");
-  const blogs = await res.json();
-  return blogs.slice(0, 3)?.map((blog: Blog) => ({ blogId: blog.id }));
-};
+import BlogDetailsCard from "@/components/shared/BlogDetailsCart";
+import Spinner from "@/components/shared/Spinner";
+import { useGetBlogByIdQuery } from "@/redux/features/blogs/blog.slice";
 
-export const generateMetadata = async ({
-  params,
-}: {
-  params: Promise<{ blogId: string }>;
-}) => {
-  const { blogId } = await params;
-  const res = await fetch(`http://localhost:5000/blogs/${blogId}`);
-  const blog = await res.json();
-  return {
-    title: `NexaBlog | ${blog.title}`,
-    description: blog.description,
-  };
-};
-
-const BlogDetails = async ({
-  params,
-}: {
-  params: Promise<{ blogId: string }>;
-}) => {
-  const { blogId } = await params;
-  const res = await fetch(`http://localhost:5000/blogs/${blogId}`);
-  const blog = await res.json();
+const BlogDetails = ({ params }: { params: { blogId: string } }) => {
+  const { data: blog, isLoading } = useGetBlogByIdQuery(params?.blogId, {});
+  if (isLoading) return <Spinner />;
   return (
     <div>
       <BlogDetailsCard key={blog.id} blog={blog} />

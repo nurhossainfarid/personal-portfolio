@@ -2,7 +2,7 @@
 
 import BlogCard from "@/components/shared/BlogCard";
 import Spinner from "@/components/shared/Spinner";
-import { useGetAllBlogQuery } from "@/redux/features/blogs/blog";
+import { useGetAllBlogQuery } from "@/redux/features/blogs/blog.slice";
 import { Blog } from "@/types/global";
 
 const BlogPage = () => {
