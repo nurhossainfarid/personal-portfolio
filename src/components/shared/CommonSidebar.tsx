@@ -12,9 +12,7 @@ const CommonSidebar = () => {
         <div className="bg-black/50 h-screen w-full absolute z-10">
           <div className="flex flex-col items-center justify-center h-full">
             <h1 className="font-raleway text-2xl font-semibold">Hello, I Am</h1>
-            <h1
-              className="text-5xl font-roboto font-bold uppercase"
-            >
+            <h1 className="text-5xl font-roboto font-bold uppercase">
               Nur Hossain Farid
             </h1>
             <div className="flex justify-center items-center gap-2">
@@ -23,7 +21,9 @@ const CommonSidebar = () => {
               </h1>
               <TextAnimation />
             </div>
-            <Button className="mt-10">Hire Me</Button>
+            <Button className="mt-10 text-white text-lg">
+              Hire Me
+            </Button>
           </div>
         </div>
         <Image

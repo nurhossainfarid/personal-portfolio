@@ -6,8 +6,7 @@ import { useGetProjectByIdQuery } from "@/redux/features/projects/project.slice"
 
 const ProjectDetails = ({ params }: { params: { projectId: string } }) => {
   const { data: project, isLoading } = useGetProjectByIdQuery(
-    params?.projectId,
-    {}
+    params?.projectId
   );
   if (isLoading) return <Spinner />;
   return (

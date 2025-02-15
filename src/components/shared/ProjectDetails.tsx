@@ -9,16 +9,19 @@ import {
   FaExternalLinkAlt,
 } from "react-icons/fa";
 import { MdOutlineBuild } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const ProjectDetailsCart = ({ project }: { project: Project }) => {
+  const router = useRouter();
   return (
     <div className="px-10 py-5">
       {/* Back Button */}
-      <Link href="/projects" className="inline-block">
-        <Button className="text-lg mb-5 font-roboto flex items-center gap-2 dark:text-gray-100">
-          <FaArrowAltCircleLeft /> Previous
-        </Button>
-      </Link>
+      <Button
+        onClick={() => router.back()}
+        className="text-lg mb-5 font-roboto flex items-center gap-2 dark:text-gray-100"
+      >
+        <FaArrowAltCircleLeft /> Previous
+      </Button>
 
       {/* Project Image */}
       <figure>
