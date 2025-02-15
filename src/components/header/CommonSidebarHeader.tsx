@@ -58,6 +58,14 @@ const CommonSidebarHeader = () => {
           >
             Contact
           </Link>
+          <Link
+            href="/dashboard"
+            className={`block py-2 px-4 hover:bg-gray-700 rounded ${
+              pathname === "/dashboard" ? "bg-gray-700" : ""
+            }`}
+          >
+            Dashboard
+          </Link>
         </div>
       )}
     </div>
