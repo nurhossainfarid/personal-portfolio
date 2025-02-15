@@ -10,13 +10,13 @@ const CommonSidebarHeader = () => {
   return (
     <div className="h-20 bg-gray-800 text-white">
       {/*Menu Button */}
-      <div className="flex justify-between items-center p-4">
+      <div className="flex justify-between items-center p-4 ">
         <ModeToggle />
         <button className="ml-auto" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
             <X size={28} />
           ) : (
-            <h1 className="flex gap-1 border-2 p-2 rounded-md">
+            <h1 className="flex gap-1 border-2 border-gray-500 p-2 rounded-md">
               Menu <Menu size={28} />
             </h1>
           )}
@@ -25,7 +25,7 @@ const CommonSidebarHeader = () => {
 
       {/*Menu */}
       {isOpen && (
-        <div className="absolute left-0 top-20 w-full bg-black/50 dark:bg-gray-900 shadow-md p-4 flex flex-col gap-4 z-50">
+        <div className="absolute left-0 top-20 w-full bg-black/60 shadow-md p-4 flex flex-col gap-4 z-50">
           <Link
             href="/"
             className={`block py-2 px-4 hover:bg-gray-700 rounded ${

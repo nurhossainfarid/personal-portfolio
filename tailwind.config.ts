@@ -74,6 +74,20 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        "icon-drop": {
+          "0%": { transform: "translateY(0)", opacity: "1" },
+          "10%": { transform: "translateY(-15px)", opacity: "0" },
+          "40%": { transform: "translateY(-15px)", opacity: "0" },
+          "60%": { transform: "translateY(-10px)", opacity: "0" },
+          "80%": { transform: "translateY(-10px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+      },
+      animation: {
+        "icon-drop":
+          "icon-drop 0.6s cubic-bezier(0.32, 1.64, 0.37, 1) forwards",
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
