@@ -4,17 +4,9 @@ import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { useState } from "react";
 import Blogs from "./blogs/page";
-
-interface UserInfoProps {
-  user?: {
-    name?: string | null | undefined;
-    email?: string | null | undefined;
-    image?: string | null | undefined;
-  };
-}
+import { UserInfoProps } from "@/types/global";
 
 const Dashboard = ({ session }: { session: UserInfoProps | null }) => {
-  console.log(session);
   const [activeTab, setActiveTab] = useState("blogs");
 
   return (

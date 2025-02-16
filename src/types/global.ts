@@ -44,3 +44,11 @@ export interface Project {
     deployment?: string;
   };
 }
+
+export interface UserInfoProps {
+  user?: {
+    name?: string | null | undefined;
+    email?: string | null | undefined;
+    image?: string | null | undefined;
+  };
+}

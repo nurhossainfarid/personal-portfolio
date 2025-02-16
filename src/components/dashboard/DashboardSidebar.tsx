@@ -14,14 +14,7 @@ import {
 } from "../ui/sidebar";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
-
-interface UserInfoProps {
-  user?: {
-    name?: string | null | undefined;
-    email?: string | null | undefined;
-    image?: string | null | undefined;
-  };
-}
+import { UserInfoProps } from "@/types/global";
 
 interface AppSidebarProps {
   activeTab: string;
