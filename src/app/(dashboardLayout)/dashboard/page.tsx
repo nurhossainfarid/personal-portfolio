@@ -1,21 +1,15 @@
-"use client";
+import { getServerSession } from "next-auth";
+import Dashboard from "./Dashboard";
+import { authOptions } from "@/utils/authOptions";
 
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { useState } from "react";
-import Blogs from "./blogs/page";
-
-const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState("blogs");
+const DashboardPage = async () => {
+  const session = await getServerSession(authOptions);
 
   return (
     <div>
-      <SidebarProvider className="text-black p-5 relative">
-        <DashboardSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className="flex-1">{activeTab === "blogs" && <Blogs />}</div>
-      </SidebarProvider>
+      <Dashboard session={session} />
     </div>
   );
 };
 
-export default Dashboard;
+export default DashboardPage;

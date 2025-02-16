@@ -1,11 +1,7 @@
-import { ReactNode, } from "react";
+import { ReactNode } from "react";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
-  return (
-    <div className="flex">
-      {children}
-    </div>
-  );
+  return <div className="flex">{children}</div>;
 };
 
 export default DashboardLayout;

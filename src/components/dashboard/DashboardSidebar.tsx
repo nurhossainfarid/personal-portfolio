@@ -13,20 +13,32 @@ import {
   SidebarMenu,
 } from "../ui/sidebar";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
+
+interface UserInfoProps {
+  user?: {
+    name?: string | null | undefined;
+    email?: string | null | undefined;
+    image?: string | null | undefined;
+  };
+}
 
 interface AppSidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
-  role?: string | undefined;
+  session: UserInfoProps | null;
 }
 
-const DashboardSidebar = ({ activeTab, setActiveTab }: AppSidebarProps) => {
+const DashboardSidebar = ({
+  activeTab,
+  setActiveTab,
+  session,
+}: AppSidebarProps) => {
   // const dispatch = useAppDispatch();
   // const navigate = useNavigate();
 
   const handleLogout = () => {
-    // dispatch(logout());
-    // navigate("/login", { replace: true });
+    signOut();
   };
 
   return (
@@ -52,11 +64,13 @@ const DashboardSidebar = ({ activeTab, setActiveTab }: AppSidebarProps) => {
         <Link href="/">
           <SidebarLink icon={<HomeIcon />} text="Home" />
         </Link>
-        <SidebarLink
-          icon={<LogOutIcon />}
-          text="Logout"
-          onClick={handleLogout}
-        />
+        {session?.user && (
+          <SidebarLink
+            icon={<LogOutIcon />}
+            text="Logout"
+            onClick={handleLogout}
+          />
+        )}
       </SidebarFooter>
     </Sidebar>
   );
