@@ -14,7 +14,7 @@ export const createBlog = async (data: FormData) => {
 
   const blogInfo = await res.json();
   if (blogInfo) {
-    redirect(`/blogs/${blogInfo.id}`);
+    redirect(`/dashboard`);
   }
   return blogInfo;
 };

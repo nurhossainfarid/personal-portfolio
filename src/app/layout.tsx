@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Roboto, Raleway } from "next/font/google";
 import Providers from "@/lib/Providers";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 const raleway = Raleway({ subsets: ["latin"] });
@@ -28,6 +29,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>

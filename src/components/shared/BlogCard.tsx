@@ -1,10 +1,27 @@
+"use client";
+
 import { Blog } from "@/types/global";
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillLike } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import BlogDetailsModel from "@/app/(dashboardLayout)/dashboard/blogs/BlogDetailsModel";
+import { useDeleteBlogMutation } from "@/redux/features/blogs/blog.slice";
+import { toast } from "sonner";
 
-const BlogCard = ({ blog }: { blog: Blog }) => {
+const BlogCard = ({
+  blog,
+  isUpdate = true,
+}: {
+  blog: Blog;
+  isUpdate: boolean;
+}) => {
+  const [deleteBlog] = useDeleteBlogMutation();
+  const handleDeleteBlog = (id: string) => {
+    deleteBlog(id);
+    toast.success("Blog deleted successfully");
+  };
   return (
     <div className="w-full shadow-md rounded-lg overflow-hidden">
       <figure>
@@ -17,10 +34,28 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
         />
       </figure>
       <div className="p-4">
-        <p className="flex items-center justify-center text-white bg-primary w-32 rounded-full py-1 text-sm">
-          <FaCalendar className="mr-2" />
-          {blog.publish_date}
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="flex items-center justify-center text-white bg-primary w-32 rounded-full py-1 text-sm">
+            <FaCalendar className="mr-2" />
+            {blog.publish_date}
+          </p>
+          {isUpdate && (
+            <div className="flex items-center gap-2">
+              <button
+                className="px-3 py-1 text-xs p-2  hover:border-2 hover:border-primary rounded-md font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out"
+                onClick={() => handleDeleteBlog(blog.id)}
+              >
+                Delete
+              </button>
+              <button
+                className="px-3 py-1 text-xs p-2 hover:border-2 hover:border-primary rounded-md font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out"
+                onClick={() => console.log("delete blog")}
+              >
+                Update
+              </button>
+            </div>
+          )}
+        </div>
         <h2 className="text-xl font-bold mt-4">
           {blog.title.length > 30
             ? blog.title.slice(0, 30) + "..."
@@ -30,9 +65,22 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
           {blog.description.length > 100
             ? blog.description.slice(0, 60) + "..."
             : blog.description}
-          <Link href={`/blogs/${blog.id}`} className="text-primary ml-1">
-            Read More
-          </Link>
+          {!isUpdate ? (
+            <Link href={`/blogs/${blog.id}`} className="text-primary ml-1">
+              Read More
+            </Link>
+          ) : (
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="px-3 py-1 text-xs p-2  hover:border-2 hover:border-primary rounded-md font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
+                  Details
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[600px]">
+                <BlogDetailsModel blog={blog} />
+              </DialogContent>
+            </Dialog>
+          )}
         </p>
         <div className="flex justify-between items-center mt-5">
           <div className="flex items-center">

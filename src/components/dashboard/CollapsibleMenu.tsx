@@ -4,7 +4,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { IoIosArrowDropdown, IoIosArrowDropright } from "react-icons/io";
 
 interface SidebarMenuButtonProps {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ const SidebarMenuButton: React.FC<SidebarMenuButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`flex items-center p-3 w-full text-left rounded-md transition-all duration-200 hover:bg-gray-700 text-gray-300 ${className}`}
+      className={`flex items-center p-3 w-full text-left rounded-md transition-all duration-300 hover:bg-gray-700 text-gray-300 font-medium ${className}`}
     >
       {children}
     </button>
@@ -46,6 +46,13 @@ const menuItems: MenuItem[] = [
       { label: "Blogs", value: "blogs", href: "" },
     ],
   },
+  {
+    label: "Manage Project",
+    subItems: [
+      { label: "Add Blog", value: "add-blog", href: "" },
+      { label: "Blogs", value: "blogs", href: "" },
+    ],
+  },
 ];
 
 interface CollapsibleMenuProps {
@@ -60,7 +67,7 @@ const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="">
+    <div className="space-y-2 p-2">
       {menuItems.map((item, index) => (
         <Collapsible
           key={index}
@@ -71,34 +78,31 @@ const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({
             <CollapsibleTrigger asChild>
               <SidebarMenuButton
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className={`flex items-center p-3 w-full text-left rounded-md transition-all duration-200 hover:bg-gray-700 `}
+                className="flex items-center justify-between gap-2 p-4 text-lg font-semibold text-white rounded-lg hover:bg-gray-700 transition-all"
               >
-                <div className="flex items-center gap-2">
-                  {item.icon}
-                  <span>{item.label}</span>
-                </div>
+                <span>{item.label}</span>
                 {openIndex === index ? (
-                  <ChevronDown className="w-4 h-4" />
+                  <IoIosArrowDropdown className="w-5 h-5 text-white" />
                 ) : (
-                  <ChevronRight className="w-4 h-4" />
+                  <IoIosArrowDropright className="w-5 h-5 text-white" />
                 )}
               </SidebarMenuButton>
             </CollapsibleTrigger>
           </div>
 
-          <CollapsibleContent className="pl-6">
-            <div className="flex flex-col space-y-2">
+          <CollapsibleContent className="pl-6 overflow-hidden transition-all duration-300">
+            <div className="flex flex-col space-y-2 mt-2">
               {item.subItems?.map((subItem, subIndex) => (
                 <button
                   key={subIndex}
                   onClick={() => subItem.value && setActiveTab(subItem.value)}
-                  className={`flex items-center p-3 w-full text-left rounded-md transition-all duration-200 hover:bg-gray-600 ${
+                  className={`flex items-center p-3 w-full text-left rounded-md transition-all duration-300 hover:bg-gray-600 font-medium ${
                     activeTab === subItem.value
-                      ? "bg-gray-600 text-white"
+                      ? "bg-gray-600 text-white shadow-md"
                       : "text-gray-300"
                   }`}
                 >
-                  <span className="font-semibold">{subItem.label}</span>
+                  <span>{subItem.label}</span>
                 </button>
               ))}
             </div>
