@@ -7,6 +7,7 @@ import Blogs from "./blogs/Blogs";
 import { UserInfoProps } from "@/types/global";
 import CreateBlog from "./blogs/CreateBlog";
 import Projects from "./projects/Projects";
+import CreateProject from "./projects/CreateProject";
 
 const Dashboard = ({ session }: { session: UserInfoProps | null }) => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -22,7 +23,7 @@ const Dashboard = ({ session }: { session: UserInfoProps | null }) => {
         <div className="flex-1">
           {activeTab === "add-blog" && <CreateBlog />}
           {activeTab === "blogs" && <Blogs />}{" "}
-          {activeTab === "add-project" && <CreateBlog />}
+          {activeTab === "add-project" && <CreateProject />}
           {activeTab === "projects" && <Projects />}
         </div>
       </SidebarProvider>

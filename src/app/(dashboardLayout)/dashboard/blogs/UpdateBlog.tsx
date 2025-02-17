@@ -10,37 +10,48 @@ import { useEffect } from "react";
 const UpdateBlog = ({ existingBlog }: { existingBlog: Blog }) => {
   const [updateBlog] = useUpdateBlogMutation();
   const router = useRouter();
-
   const { register, handleSubmit, reset } = useForm<Blog>();
 
-  // Ensure form resets with existing blog data when component mounts or updates
   useEffect(() => {
     reset(existingBlog);
   }, [existingBlog, reset]);
 
-  const onSubmit = async (data: Blog) => {
+  const onSubmit = async (data: Partial<Blog>) => {
     try {
       const updatedBlog: Blog = {
         id: existingBlog.id,
-        title: data.title === "" ? existingBlog.title : data.title,
-        author_name:
-          data.author_name === "" ? existingBlog.author_name : data.author_name,
-        publish_date:
-          data.publish_date === ""
-            ? existingBlog.publish_date
-            : data.publish_date,
-        total_likes:
-          data.total_likes === "" ? existingBlog.total_likes : data.total_likes,
-        blog_image:
-          data.blog_image === "" ? existingBlog.blog_image : data.blog_image,
+        title:
+          data.title !== undefined && data.title !== ""
+            ? data.title
+            : existingBlog.title,
         description:
-          data.description === "" ? existingBlog.description : data.description,
+          data.description !== undefined && data.description !== ""
+            ? data.description
+            : existingBlog.description,
+        publish_date:
+          data.publish_date !== undefined && data.publish_date !== ""
+            ? data.publish_date
+            : existingBlog.publish_date,
+        author_name:
+          data.author_name !== undefined && data.author_name !== ""
+            ? data.author_name
+            : existingBlog.author_name,
+        blog_image:
+          data.blog_image !== undefined && data.blog_image !== ""
+            ? data.blog_image
+            : existingBlog.blog_image,
+        total_likes:
+          data.total_likes !== undefined && data.total_likes !== ""
+            ? data.total_likes
+            : existingBlog.total_likes,
       };
 
-      await updateBlog(updatedBlog);
+      // Call the update mutation with the updated blog object
+      await updateBlog({ id: existingBlog.id, data: updatedBlog });
+
       toast.success("Blog updated successfully");
-      reset();
-      router.push("/dashboard");
+      reset(); // Reset the form
+      router.push("/dashboard"); // Navigate back to dashboard
     } catch (error) {
       console.error("Update failed:", error);
       toast.error("Failed to update blog");
@@ -102,7 +113,11 @@ const UpdateBlog = ({ existingBlog }: { existingBlog: Blog }) => {
             <label className="block text-sm font-medium text-gray-700">
               Blog Image URL
             </label>
-            <input {...register("blog_image")} type="url" />
+            <input
+              {...register("blog_image")}
+              type="url"
+              className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-primary focus:border-primary"
+            />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">

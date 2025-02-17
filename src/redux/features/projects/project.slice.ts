@@ -9,6 +9,7 @@ const useBlogApi = baseApi.injectEndpoints({
           method: "GET",
         };
       },
+      providesTags: ["deleteProject", "createProject", "updatedProject"],
     }),
     createProject: builder.mutation({
       query: (body) => {
@@ -18,6 +19,7 @@ const useBlogApi = baseApi.injectEndpoints({
           body,
         };
       },
+      invalidatesTags: ["createProject"],
     }),
     getProjectById: builder.query({
       query: (id) => {
@@ -35,6 +37,7 @@ const useBlogApi = baseApi.injectEndpoints({
           body,
         };
       },
+      invalidatesTags: ["updatedProject"],
     }),
     deleteProject: builder.mutation({
       query: (id) => {
@@ -43,6 +46,7 @@ const useBlogApi = baseApi.injectEndpoints({
           method: "DELETE",
         };
       },
+      invalidatesTags: ["deleteProject"],
     }),
   }),
 });
