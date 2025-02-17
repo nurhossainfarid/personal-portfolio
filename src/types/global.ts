@@ -52,3 +52,10 @@ export interface UserInfoProps {
     image?: string | null | undefined;
   };
 }
+
+export interface ContactList {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+}

@@ -1,15 +1,19 @@
-"use client";
+import BlogDetailsCart from "@/components/shared/BlogDetailsCart";
 
-import BlogDetailsCard from "@/components/shared/BlogDetailsCart";
-import Spinner from "@/components/shared/Spinner";
-import { useGetBlogByIdQuery } from "@/redux/features/blogs/blog.slice";
+const BlogDetails = async ({
+  params,
+}: {
+  params: Promise<{ blogId: string }>;
+}) => {
+  const { blogId } = await params;
 
-const BlogDetails = ({ params }: { params: { blogId: string } }) => {
-  const { data: blog, isLoading } = useGetBlogByIdQuery(params?.blogId, {});
-  if (isLoading) return <Spinner />;
   return (
     <div>
-      <BlogDetailsCard key={blog.id} blog={blog} />
+      {blogId ? (
+        <BlogDetailsCart key={blogId} blogId={blogId} />
+      ) : (
+        <p>Blog not found</p>
+      )}
     </div>
   );
 };

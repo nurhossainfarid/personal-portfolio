@@ -193,5 +193,43 @@
       "blog_image": "https://startnearshoring.com/wp-content/uploads/2023/07/The_Growing_Importance_of_Cybersecurity.jpg",
       "total_likes": "950"
     }
+  ],
+  "contactLists": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "message": "I am interested in collaborating on a project. Please reach out to discuss further details."
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": " john@gmail.com ",
+      "message": "I have a question about the latest developments in quantum computing. Please let me know if there are any resources available."
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "email": " Alice Johnson ",
+      "message": "I am a student interested in learning more about artificial intelligence. Can you recommend any online courses or resources?"
+    },
+    {
+      "id": "4",
+      "name": "Bob Brown",
+      "email": " Bob Brown ",
+      "message": "I would like to inquire about your availability for a consultation on blockchain technology. Please provide your contact information."
+    },
+    {
+      "id": "5",
+      "name": "Eve Wilson",
+      "email": " Eve Wilson ",
+      "message": "I am a blogger looking to collaborate on a guest post. Please let me know if you are open to guest contributions."
+    },
+    {
+      "id": "3hnHYws5iVVRMo9kPr_cR",
+      "name": "Nur Hossain Farid",
+      "email": "nur35-843@diu.edu.bd",
+      "message": "I am a blogger looking to collaborate on a guest post."
+    }
   ]
 }

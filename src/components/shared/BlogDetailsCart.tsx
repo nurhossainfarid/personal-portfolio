@@ -1,11 +1,16 @@
-import { Blog } from "@/types/global";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillLike } from "react-icons/ai";
 import { FaArrowAltCircleLeft, FaCalendar } from "react-icons/fa";
 import { Button } from "../ui/button";
+import { useGetBlogByIdQuery } from "@/redux/features/blogs/blog.slice";
+import Spinner from "./Spinner";
 
-const BlogDetailsCart = ({ blog }: { blog: Blog }) => {
+const BlogDetailsCart = ({ blogId }: { blogId: string }) => {
+  const { data: blog, isLoading } = useGetBlogByIdQuery(blogId);
+
+  if (isLoading) return <Spinner />;
   return (
     <div className="p-10">
       <Link href="/blogs">

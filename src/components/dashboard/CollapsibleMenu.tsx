@@ -53,6 +53,10 @@ const menuItems: MenuItem[] = [
       { label: "Blogs", value: "blogs", href: "" },
     ],
   },
+  {
+    label: "Manage Messages",
+    subItems: [{ label: "Messages", value: "messages", href: "" }],
+  },
 ];
 
 interface CollapsibleMenuProps {

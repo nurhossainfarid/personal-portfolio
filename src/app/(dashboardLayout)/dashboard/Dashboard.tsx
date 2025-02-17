@@ -8,6 +8,7 @@ import { UserInfoProps } from "@/types/global";
 import CreateBlog from "./blogs/CreateBlog";
 import Projects from "./projects/Projects";
 import CreateProject from "./projects/CreateProject";
+import Messages from "./message/Messages";
 
 const Dashboard = ({ session }: { session: UserInfoProps | null }) => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -25,6 +26,7 @@ const Dashboard = ({ session }: { session: UserInfoProps | null }) => {
           {activeTab === "blogs" && <Blogs />}{" "}
           {activeTab === "add-project" && <CreateProject />}
           {activeTab === "projects" && <Projects />}
+          {activeTab === "messages" && <Messages />}
         </div>
       </SidebarProvider>
     </div>

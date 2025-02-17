@@ -10,6 +10,9 @@ export const baseApi = createApi({
     "createProject",
     "updatedProject",
     "deleteProject",
+    "createContactList",
+    "updateContactList",
+    "deleteContactList",
   ],
   endpoints: () => ({}),
 });

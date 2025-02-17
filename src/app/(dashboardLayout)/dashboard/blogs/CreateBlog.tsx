@@ -3,6 +3,7 @@ import { Blog } from "@/types/global";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { nanoid } from "@reduxjs/toolkit";
 
 const CreateBlog = () => {
   const [addBlog] = useCreateBlogMutation();
@@ -15,11 +16,10 @@ const CreateBlog = () => {
   const router = useRouter();
 
   const onSubmit = (data: Blog) => {
-    console.log("Form Submitted", data);
-    addBlog(data);
+    addBlog({ ...data, id: nanoid() });
     toast.success("Blog created successfully");
     reset();
-    router.push("/dashboard/blogs");
+    router.push("/dashboard");
   };
   return (
     <div className="flex items-center justify-center px-4 py-10 md:w-[1200px]">

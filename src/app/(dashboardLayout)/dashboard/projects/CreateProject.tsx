@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { useCreateProjectMutation } from "@/redux/features/projects/project.slice";
 import { Project } from "@/types/global";
-
+import { nanoid } from "@reduxjs/toolkit";
 
 const CreateProject = () => {
   const {
@@ -16,7 +16,7 @@ const CreateProject = () => {
   const [addProject] = useCreateProjectMutation();
 
   const onSubmit = (data: Project) => {
-    addProject(data);
+    addProject({ ...data, id: nanoid() });
     toast.success("Project created successfully");
     reset();
     router.push("/dashboard");
