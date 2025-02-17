@@ -40,14 +40,14 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   {
-    label: "Manage Blog",
+    label: "Manage Project",
     subItems: [
-      { label: "Add Blog", value: "add-blog", href: "" },
-      { label: "Blogs", value: "blogs", href: "" },
+      { label: "Add Project", value: "add-project", href: "" },
+      { label: "Projects", value: "projects", href: "" },
     ],
   },
   {
-    label: "Manage Project",
+    label: "Manage Blog",
     subItems: [
       { label: "Add Blog", value: "add-blog", href: "" },
       { label: "Blogs", value: "blogs", href: "" },

@@ -9,11 +9,11 @@ const BlogDetailsCart = ({ blog }: { blog: Blog }) => {
   return (
     <div className="p-10">
       <Link href="/blogs">
-        <Button className="text-lg">
+        <Button className="text-lg mb-5">
           <FaArrowAltCircleLeft /> Previous
         </Button>
       </Link>
-      <p className="flex items-center justify-center text-white bg-primary w-fit px-3 py-1 rounded-full">
+      <p className="flex items-center justify-center w-fit px-3 py-1 rounded-full">
         <FaCalendar className="mr-2" />
         {blog.publish_date}
       </p>

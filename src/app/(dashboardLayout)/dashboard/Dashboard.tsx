@@ -3,12 +3,13 @@
 import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { useState } from "react";
-import Blogs from "./blogs/page";
+import Blogs from "./blogs/Blogs";
 import { UserInfoProps } from "@/types/global";
 import CreateBlog from "./blogs/CreateBlog";
+import Projects from "./projects/Projects";
 
 const Dashboard = ({ session }: { session: UserInfoProps | null }) => {
-  const [activeTab, setActiveTab] = useState("blogs");
+  const [activeTab, setActiveTab] = useState("projects");
 
   return (
     <div>
@@ -19,8 +20,10 @@ const Dashboard = ({ session }: { session: UserInfoProps | null }) => {
           session={session}
         />
         <div className="flex-1">
-          {activeTab === "blogs" && <Blogs />}{" "}
           {activeTab === "add-blog" && <CreateBlog />}
+          {activeTab === "blogs" && <Blogs />}{" "}
+          {activeTab === "add-project" && <CreateBlog />}
+          {activeTab === "projects" && <Projects />}
         </div>
       </SidebarProvider>
     </div>

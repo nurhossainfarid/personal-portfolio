@@ -9,13 +9,14 @@ import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import BlogDetailsModel from "@/app/(dashboardLayout)/dashboard/blogs/BlogDetailsModel";
 import { useDeleteBlogMutation } from "@/redux/features/blogs/blog.slice";
 import { toast } from "sonner";
+import UpdateBlog from "@/app/(dashboardLayout)/dashboard/blogs/UpdateBlog";
 
 const BlogCard = ({
   blog,
-  isUpdate = true,
+  isUpdate = false,
 }: {
   blog: Blog;
-  isUpdate: boolean;
+  isUpdate?: boolean;
 }) => {
   const [deleteBlog] = useDeleteBlogMutation();
   const handleDeleteBlog = (id: string) => {
@@ -47,22 +48,29 @@ const BlogCard = ({
               >
                 Delete
               </button>
-              <button
-                className="px-3 py-1 text-xs p-2 hover:border-2 hover:border-primary rounded-md font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out"
-                onClick={() => console.log("delete blog")}
-              >
-                Update
-              </button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    className="px-3 py-1 text-xs p-2 hover:border-2 hover:border-primary rounded-md font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out"
+                    onClick={() => console.log("delete blog")}
+                  >
+                    Update
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px]">
+                  <UpdateBlog existingBlog={blog} />
+                </DialogContent>
+              </Dialog>
             </div>
           )}
         </div>
         <h2 className="text-xl font-bold mt-4">
-          {blog.title.length > 30
+          {blog.title?.length > 30
             ? blog.title.slice(0, 30) + "..."
             : blog.title}
         </h2>
         <p className="text-gray-400 mt-2">
-          {blog.description.length > 100
+          {blog.description?.length > 100
             ? blog.description.slice(0, 60) + "..."
             : blog.description}
           {!isUpdate ? (
