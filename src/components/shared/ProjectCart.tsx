@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { useDeleteProjectMutation } from "@/redux/features/projects/project.slice";
 import { toast } from "sonner";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import UpdateProject from "@/app/(dashboardLayout)/dashboard/projects/UpdateProject";
 
 const ProjectCart = ({
   project,
@@ -31,16 +33,21 @@ const ProjectCart = ({
       <div className="absolute opacity-0 hover:opacity-100 inset-0 bg-black hover:bg-opacity-80 flex flex-col justify-center items-center gap-2 transition-all duration-700">
         <p className="text-white font-bold text-lg">{project.title}</p>
         <div className="flex items-center gap-3">
-          <Link href={`/projects/${project.id}`} className="text-primary">
+          <Link href={`/projects/${project.id}`}>
             <Button>Details</Button>
           </Link>
           {isUpdated && (
             <>
-              <Link href={`/projects/${project.id}`} className="text-primary">
-                <Button>Edit</Button>
-              </Link>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="bg-yellow-500 hover:bg-yellow-600">Update</Button>
+                </DialogTrigger>
+                <DialogContent className="w-[100%] max-h-[90vh] overflow-y-auto">
+                  <UpdateProject existingProject={project} />
+                </DialogContent>
+              </Dialog>
               <Button
-                className=""
+                className="bg-red-500"
                 onClick={() => handleDeleteProject(project.id)}
               >
                 Delete

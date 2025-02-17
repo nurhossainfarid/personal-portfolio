@@ -30,11 +30,11 @@ const useBlogApi = baseApi.injectEndpoints({
       },
     }),
     updateProject: builder.mutation({
-      query: ({ id, body }) => {
+      query: ({ id, data }) => {
         return {
           url: `/projects/${id}`,
           method: "PUT",
-          body,
+          body: data,
         };
       },
       invalidatesTags: ["updatedProject"],

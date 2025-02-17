@@ -116,11 +116,11 @@
     },
     {
       "id": "p6",
-      "title": "Everything Starts with Water",
-      "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255495/water-giftOfEart_pku6hq.png",
+      "title": "Everything Starts with water",
       "description": "Everything Starts with Water is an educational and environmental awareness platform that highlights the importance of water conservation. The platform provides interactive content, real-world data, and community-driven initiatives to promote sustainable water management practices.",
       "github": "https://github.com/nurhossainfarid/everything-starts-with-water-client",
       "live": "https://watertheearthgift.netlify.app/",
+      "image": "https://res.cloudinary.com/duoa4oiur/image/upload/v1739255495/water-giftOfEart_pku6hq.png",
       "features": [
         "Interactive data visualizations on water usage",
         "Educational resources on water conservation",
@@ -133,6 +133,7 @@
         "frontend": "React.js, TypeScript, Tailwind CSS, Chart.js",
         "backend": "Node.js, Express.js",
         "database": "MongoDB",
+        "paymentGateway": "PayPal",
         "deployment": "Vercel"
       }
     }

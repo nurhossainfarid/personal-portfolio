@@ -2,23 +2,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { useCreateProjectMutation } from "@/redux/features/projects/project.slice";
+import { Project } from "@/types/global";
 
-interface Project {
-  id: string;
-  title: string;
-  image: string;
-  description: string;
-  github: string;
-  live: string;
-  features?: string[];
-  technologies: {
-    frontend?: string;
-    backend?: string;
-    database?: string;
-    paymentGateway?: string;
-    deployment?: string;
-  };
-}
 
 const CreateProject = () => {
   const {
