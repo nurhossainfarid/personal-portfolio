@@ -3,6 +3,7 @@ import CommonSidebarHeader from "../header/CommonSidebarHeader";
 import Image from "next/image";
 import TextAnimation from "./TextAnimation";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const CommonSidebar = () => {
   return (
@@ -21,9 +22,9 @@ const CommonSidebar = () => {
               </h1>
               <TextAnimation />
             </div>
-            <Button className="mt-10 text-white text-lg">
-              Hire Me
-            </Button>
+            <Link href="/contact">
+              <Button className="mt-10 text-white text-lg">Hire Me</Button>
+            </Link>
           </div>
         </div>
         <Image

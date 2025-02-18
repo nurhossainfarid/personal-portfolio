@@ -80,7 +80,8 @@ export default function LoginPage() {
               className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200 transition duration-300 dark:bg-gray-800 dark:hover:bg-gray-700"
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl:
+                    "https://personal-portfolio-client-nu.vercel.app/dashboard",
                 })
               }
             >
@@ -98,7 +99,8 @@ export default function LoginPage() {
               className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200 transition duration-300 dark:bg-gray-800 dark:hover:bg-gray-700"
               onClick={() =>
                 signIn("github", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl:
+                    "https://personal-portfolio-client-nu.vercel.app/dashboard",
                 })
               }
             >
