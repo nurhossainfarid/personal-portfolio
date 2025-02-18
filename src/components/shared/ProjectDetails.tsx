@@ -1,4 +1,4 @@
-import { Project } from "@/types/global";
+"use client";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -10,9 +10,14 @@ import {
 } from "react-icons/fa";
 import { MdOutlineBuild } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { useGetProjectByIdQuery } from "@/redux/features/projects/project.slice";
+import Spinner from "./Spinner";
 
-const ProjectDetailsCart = ({ project }: { project: Project }) => {
+const ProjectDetailsCart = ({ projectId }: { projectId: string }) => {
   const router = useRouter();
+  const { data, isLoading } = useGetProjectByIdQuery(projectId);
+  const project = data?.data;
+  if (isLoading) return <Spinner />;
   return (
     <div className="px-10 py-5">
       {/* Back Button */}
@@ -59,11 +64,11 @@ const ProjectDetailsCart = ({ project }: { project: Project }) => {
               <FaCheckCircle className="text-green-500" /> Features:
             </h3>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              {project.features.map((feature, index) => (
+                {project.features.map((feature: string, index: number) => (
                 <li key={index} className="mb-1">
                   {feature}
                 </li>
-              ))}
+                ))}
             </ul>
           </div>
         )}

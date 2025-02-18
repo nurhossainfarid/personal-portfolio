@@ -23,14 +23,15 @@ import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { UserInfoProps } from "@/types/global";
 import Image from "next/image";
+import { toast } from "sonner";
 
 export function AvatarMenu({ session }: { session: UserInfoProps | null }) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-  console.log(session?.user);
 
   const handleLogout = () => {
     signOut();
+    toast.success("Logged out successfully");
   };
 
   return (

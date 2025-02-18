@@ -14,12 +14,12 @@ const useBlogApi = baseApi.injectEndpoints({
     createBlog: builder.mutation({
       query: (body) => {
         return {
-          url: "/blogs",
+          url: "/blogs/create-blog",
           method: "POST",
           body,
         };
       },
-      invalidatesTags: ["createBlog", "updateBlog"],
+      invalidatesTags: ["createBlog"],
     }),
     getBlogById: builder.query({
       query: (id) => {
@@ -28,7 +28,7 @@ const useBlogApi = baseApi.injectEndpoints({
           method: "GET",
         };
       },
-      providesTags: ["deleteBlog"],
+      providesTags: ["updateBlog"],
     }),
     updateBlog: builder.mutation({
       query: ({ id, data }) => {

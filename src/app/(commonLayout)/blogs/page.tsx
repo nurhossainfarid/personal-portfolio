@@ -6,7 +6,8 @@ import { useGetAllBlogQuery } from "@/redux/features/blogs/blog.slice";
 import { Blog } from "@/types/global";
 
 const BlogPage = () => {
-  const { data: blogs, isLoading } = useGetAllBlogQuery({});
+  const { data, isLoading } = useGetAllBlogQuery({});
+  const blogs = data?.data;
 
   if (isLoading) return <Spinner />;
   return (
@@ -16,7 +17,7 @@ const BlogPage = () => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-5">
         {blogs?.map((blog: Blog) => (
-          <BlogCard key={blog.id} blog={blog} />
+          <BlogCard key={blog._id} blog={blog} />
         ))}
       </div>
     </div>

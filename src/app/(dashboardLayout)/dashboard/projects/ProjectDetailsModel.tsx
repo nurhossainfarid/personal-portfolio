@@ -8,7 +8,7 @@ interface ProjectDetailsModelProps {
 const ProjectDetailsModel = ({ project }: ProjectDetailsModelProps) => {
   return (
     <div className="p-6">
-      <ProjectDetailsCart key={project.id} project={project} />
+      <ProjectDetailsCart key={project._id} projectId={project._id} />
     </div>
   );
 };

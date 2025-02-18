@@ -18,8 +18,7 @@ const UpdateProject = ({ existingProject }: { existingProject: Project }) => {
 
   const onSubmit = async (data: Project) => {
     try {
-      const updatedProject: Project = {
-        id: existingProject.id,
+      const updatedProject: Partial<Project> = {
         title:
           data.title !== undefined && data.title !== ""
             ? data.title
@@ -40,10 +39,9 @@ const UpdateProject = ({ existingProject }: { existingProject: Project }) => {
           data.image !== undefined && data.image !== ""
             ? data.image
             : existingProject.image,
-        features:
-          data.features !== undefined && data.features.length > 0
-            ? data.features
-            : existingProject.features,
+        features: data.features?.length
+          ? data.features
+          : existingProject.features,
         technologies: {
           frontend:
             data.technologies?.frontend !== undefined &&
@@ -72,9 +70,10 @@ const UpdateProject = ({ existingProject }: { existingProject: Project }) => {
               : existingProject.technologies?.deployment,
         },
       };
-      console.log(updateProject);
-
-      await updateProject({ id: existingProject.id, data: updatedProject });
+      await updateProject({
+        id: existingProject._id,
+        data: updatedProject,
+      });
       toast.success("Project updated successfully");
       reset();
       router.push("/dashboard");

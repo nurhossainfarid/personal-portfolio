@@ -19,7 +19,7 @@ const UpdateBlog = ({ existingBlog }: { existingBlog: Blog }) => {
   const onSubmit = async (data: Partial<Blog>) => {
     try {
       const updatedBlog: Blog = {
-        id: existingBlog.id,
+        _id: existingBlog._id,
         title:
           data.title !== undefined && data.title !== ""
             ? data.title
@@ -36,6 +36,10 @@ const UpdateBlog = ({ existingBlog }: { existingBlog: Blog }) => {
           data.author_name !== undefined && data.author_name !== ""
             ? data.author_name
             : existingBlog.author_name,
+        category:
+          data.category !== undefined && data.category !== ""
+            ? data.category
+            : existingBlog.category,
         blog_image:
           data.blog_image !== undefined && data.blog_image !== ""
             ? data.blog_image
@@ -47,7 +51,7 @@ const UpdateBlog = ({ existingBlog }: { existingBlog: Blog }) => {
       };
 
       // Call the update mutation with the updated blog object
-      await updateBlog({ id: existingBlog.id, data: updatedBlog });
+      await updateBlog({ id: existingBlog._id, data: updatedBlog });
 
       toast.success("Blog updated successfully");
       reset(); // Reset the form
@@ -106,6 +110,19 @@ const UpdateBlog = ({ existingBlog }: { existingBlog: Blog }) => {
                 {...register("total_likes")}
                 type="number"
                 className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-primary focus:border-primary"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Category
+              </label>
+              <input
+                {...register("category", {
+                  required: "Category is required",
+                })}
+                type="text"
+                className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500"
+                placeholder="Enter Category"
               />
             </div>
           </div>

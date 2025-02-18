@@ -6,7 +6,8 @@ import { useGetAllProjectQuery } from "@/redux/features/projects/project.slice";
 import { Project } from "@/types/global";
 
 const ProjectPage = () => {
-  const { data: projects, isLoading } = useGetAllProjectQuery({});
+  const { data, isLoading } = useGetAllProjectQuery({});
+  const projects = data?.data;
 
   if (isLoading) return <Spinner />;
   return (
@@ -16,7 +17,7 @@ const ProjectPage = () => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
         {projects?.map((project: Project) => (
-          <ProjectCart key={project.id} project={project} />
+          <ProjectCart key={project._id} project={project} />
         ))}
       </div>
     </div>

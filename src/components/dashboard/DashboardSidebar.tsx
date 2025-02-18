@@ -16,6 +16,7 @@ import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { UserInfoProps } from "@/types/global";
 import Image from "next/image";
+import { toast } from "sonner";
 
 interface AppSidebarProps {
   activeTab: string;
@@ -28,11 +29,9 @@ const DashboardSidebar = ({
   setActiveTab,
   session,
 }: AppSidebarProps) => {
-  // const dispatch = useAppDispatch();
-  // const navigate = useNavigate();
-
   const handleLogout = () => {
     signOut();
+    toast.success("Logged out successfully");
   };
 
   return (

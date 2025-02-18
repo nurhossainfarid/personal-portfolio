@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useCreateProjectMutation } from "@/redux/features/projects/project.slice";
 import { Project } from "@/types/global";
-import { nanoid } from "@reduxjs/toolkit";
 
 const CreateProject = () => {
   const {
@@ -15,11 +15,31 @@ const CreateProject = () => {
   const router = useRouter();
   const [addProject] = useCreateProjectMutation();
 
+  // State for features list
+  const [features, setFeatures] = useState<string[]>([]);
+  const [featureInput, setFeatureInput] = useState("");
+
+  const addFeature = () => {
+    if (featureInput.trim() && !features.includes(featureInput)) {
+      setFeatures([...features, featureInput.trim()]);
+      setFeatureInput("");
+    }
+  };
+
+  const removeFeature = (index: number) => {
+    setFeatures(features.filter((_, i) => i !== index));
+  };
+
   const onSubmit = (data: Project) => {
-    addProject({ ...data, id: nanoid() });
-    toast.success("Project created successfully");
-    reset();
-    router.push("/dashboard");
+    try {
+      addProject({ ...data, features });
+      toast.success("Project created successfully");
+      reset();
+      setFeatures([]);
+      router.push("/dashboard");
+    } catch {
+      toast.error("Failed to create project");
+    }
   };
 
   return (
@@ -142,6 +162,46 @@ const CreateProject = () => {
               className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm"
               placeholder="Deployment Platform"
             />
+          </div>
+
+          {/* Features Input */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Features
+            </label>
+            <div className="flex">
+              <input
+                type="text"
+                value={featureInput}
+                onChange={(e) => setFeatureInput(e.target.value)}
+                className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm"
+                placeholder="Enter a feature"
+              />
+              <button
+                type="button"
+                onClick={addFeature}
+                className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md"
+              >
+                Add
+              </button>
+            </div>
+            <ul className="mt-2">
+              {features.map((feature, index) => (
+                <li
+                  key={index}
+                  className="flex justify-between items-center bg-gray-100 p-2 rounded-md mt-1"
+                >
+                  {feature}
+                  <button
+                    type="button"
+                    onClick={() => removeFeature(index)}
+                    className="text-red-500 ml-2"
+                  >
+                    ✕
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <button

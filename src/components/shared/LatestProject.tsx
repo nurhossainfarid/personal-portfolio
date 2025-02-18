@@ -9,7 +9,8 @@ import ProjectCart from "./ProjectCart";
 import { Project } from "@/types/global";
 
 const LatestProject = () => {
-  const { data: projects, isLoading } = useGetAllProjectQuery({});
+  const { data, isLoading } = useGetAllProjectQuery(undefined);
+  const projects = data?.data;
 
   if (isLoading) return <Spinner />;
   return (
@@ -20,10 +21,10 @@ const LatestProject = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
         {projects &&
           [...projects]
-            .sort(() => Math.random() - 0.5)
-            .slice(0, 4)
-            .map((project: Project) => (
-              <ProjectCart key={project.id} project={project} />
+            ?.sort(() => Math.random() - 0.5)
+            ?.slice(0, 4)
+            ?.map((project: Project) => (
+              <ProjectCart key={project._id} project={project} />
             ))}
       </div>
       <Link href="/projects" className="text-center">

@@ -4,13 +4,14 @@ import { useGetAllContactListQuery } from "@/redux/features/contactlists/contact
 import { ContactList } from "@/types/global";
 
 export default function Messages() {
-  const { data: messages } = useGetAllContactListQuery({});
+  const { data } = useGetAllContactListQuery({});
+  const messages = data?.data;
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Messages</h1>
       <div className="grid md:grid-cols-3 gap-4">
         {messages?.map((msg: ContactList) => (
-          <Card key={msg.id} className="shadow-md">
+          <Card key={msg._id} className="shadow-md">
             <CardHeader>
               <CardTitle>{msg.name}</CardTitle>
             </CardHeader>

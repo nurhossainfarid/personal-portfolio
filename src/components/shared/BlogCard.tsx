@@ -44,7 +44,7 @@ const BlogCard = ({
             <div className="flex items-center gap-2">
               <button
                 className="px-3 py-1 text-xs p-2  hover:border-2 hover:border-primary rounded-md font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out"
-                onClick={() => handleDeleteBlog(blog.id)}
+                onClick={() => handleDeleteBlog(blog._id)}
               >
                 Delete
               </button>
@@ -74,7 +74,7 @@ const BlogCard = ({
             ? blog.description.slice(0, 60) + "..."
             : blog.description}
           {!isUpdate ? (
-            <Link href={`/blogs/${blog.id}`} className="text-primary ml-1">
+            <Link href={`/blogs/${blog._id}`} className="text-primary ml-1">
               Read More
             </Link>
           ) : (

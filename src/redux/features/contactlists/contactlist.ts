@@ -5,7 +5,7 @@ const useContactListApi = baseApi.injectEndpoints({
     getAllContactList: builder.query({
       query: () => {
         return {
-          url: "/contactLists",
+          url: "/contacts",
           method: "GET",
         };
       },
@@ -18,38 +18,12 @@ const useContactListApi = baseApi.injectEndpoints({
     createContactList: builder.mutation({
       query: (body) => {
         return {
-          url: "/contactLists",
+          url: "/contacts/create-contact",
           method: "POST",
           body,
         };
       },
       invalidatesTags: ["createContactList", "updateContactList"],
-    }),
-    getContactListById: builder.query({
-      query: (id) => {
-        return {
-          url: `/contactLists/${id}`,
-          method: "GET",
-        };
-      },
-      providesTags: ["deleteContactList"],
-    }),
-    updateContactList: builder.mutation({
-      query: ({ id, data }) => {
-        return {
-          url: `/contactLists/${id}`,
-          method: "PUT",
-          body: data,
-        };
-      },
-      invalidatesTags: ["updateContactList"],
-    }),
-    deleteContactList: builder.mutation({
-      query: (id: string) => ({
-        url: `/contactLists/${id}`,
-        method: "DELETE",
-      }),
-      invalidatesTags: ["deleteContactList"],
     }),
   }),
 });
@@ -57,7 +31,4 @@ const useContactListApi = baseApi.injectEndpoints({
 export const {
   useGetAllContactListQuery,
   useCreateContactListMutation,
-  useGetContactListByIdQuery,
-  useUpdateContactListMutation,
-  useDeleteContactListMutation,
 } = useContactListApi;

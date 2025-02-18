@@ -19,17 +19,18 @@ export type TResponse<T> = {
 export type TResponseRedux<T> = TResponse<T> & BaseQueryApi;
 
 export interface Blog {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   publish_date: string;
   author_name: string;
+  category: string;
   blog_image: string;
   total_likes: string;
 }
 
 export interface Project {
-  id: string;
+  _id: string;
   title: string;
   image: string;
   description: string;
@@ -54,7 +55,7 @@ export interface UserInfoProps {
 }
 
 export interface ContactList {
-  id: string;
+  _id: string;
   name: string;
   email: string;
   message: string;

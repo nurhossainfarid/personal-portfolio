@@ -8,7 +8,8 @@ import { useGetBlogByIdQuery } from "@/redux/features/blogs/blog.slice";
 import Spinner from "./Spinner";
 
 const BlogDetailsCart = ({ blogId }: { blogId: string }) => {
-  const { data: blog, isLoading } = useGetBlogByIdQuery(blogId);
+  const { data, isLoading } = useGetBlogByIdQuery(blogId);
+  const blog = data?.data;
 
   if (isLoading) return <Spinner />;
   return (

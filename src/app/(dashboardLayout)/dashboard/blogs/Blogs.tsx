@@ -5,7 +5,8 @@ import { Blog } from "@/types/global";
 import React from "react";
 
 const Blogs = () => {
-  const { data: blogs, isLoading } = useGetAllBlogQuery({});
+  const { data, isLoading } = useGetAllBlogQuery({});
+  const blogs = data?.data;
 
   if (isLoading) return <Spinner />;
   return (
@@ -15,7 +16,7 @@ const Blogs = () => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-5">
         {blogs?.map((blog: Blog) => (
-          <BlogCard key={blog.id} blog={blog} isUpdate={true} />
+          <BlogCard key={blog._id} blog={blog} isUpdate={true} />
         ))}
       </div>
     </div>

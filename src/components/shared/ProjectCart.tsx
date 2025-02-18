@@ -33,7 +33,7 @@ const ProjectCart = ({
       <div className="absolute opacity-0 hover:opacity-100 inset-0 bg-black hover:bg-opacity-80 flex flex-col justify-center items-center gap-2 transition-all duration-700">
         <p className="text-white font-bold text-lg">{project.title}</p>
         <div className="flex items-center gap-3">
-          <Link href={`/projects/${project.id}`}>
+          <Link href={`/projects/${project._id}`}>
             <Button>Details</Button>
           </Link>
           {isUpdated && (
@@ -48,7 +48,7 @@ const ProjectCart = ({
               </Dialog>
               <Button
                 className="bg-red-500"
-                onClick={() => handleDeleteProject(project.id)}
+                onClick={() => handleDeleteProject(project._id)}
               >
                 Delete
               </Button>

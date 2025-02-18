@@ -14,12 +14,12 @@ const useBlogApi = baseApi.injectEndpoints({
     createProject: builder.mutation({
       query: (body) => {
         return {
-          url: "/projects",
+          url: "/projects/create-project",
           method: "POST",
           body,
         };
       },
-      invalidatesTags: ["createProject"],
+      invalidatesTags: ["createProject", "updatedProject"],
     }),
     getProjectById: builder.query({
       query: (id) => {
@@ -28,6 +28,7 @@ const useBlogApi = baseApi.injectEndpoints({
           method: "GET",
         };
       },
+      providesTags: ["updatedProject"],
     }),
     updateProject: builder.mutation({
       query: ({ id, data }) => {

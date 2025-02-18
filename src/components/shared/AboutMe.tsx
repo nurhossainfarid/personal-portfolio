@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Mail, Phone, Rocket } from "lucide-react";
 import Image from "next/image";
@@ -30,11 +30,7 @@ const AboutMe = () => {
             alt="my image"
             className=""
           />
-          <Link
-            href={
-              "https://drive.google.com/file/d/1S-cl0Qq6yeGoEI6Mj0drryz92JjJwRrY/view"
-            }
-          >
+          <Link href="https://drive.google.com/uc?export=download&id=1S-cl0Qq6yeGoEI6Mj0drryz92JjJwRrY">
             <Button className="w-full rounded-none">
               <Rocket />
               Download CV
