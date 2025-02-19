@@ -9,7 +9,7 @@ const CommonLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex lg:flex-row flex-col">
       <CommonSidebar />
-      <div className="md:ml-96 lg:ml-[600px]">
+      <div className="md:ml-96 lg:ml-[600px] w-full">
         <Navbar session={session} />
         {children}
       </div>
