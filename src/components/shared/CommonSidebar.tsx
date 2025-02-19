@@ -7,13 +7,15 @@ import Link from "next/link";
 
 const CommonSidebar = () => {
   return (
-    <div className="fixed bg-black text-white w-96 lg:w-[600px] min-h-screen transition-transform md:translate-x-0">
+    <div className="lg:fixed bg-black text-white w-96 lg:w-[600px] lg:min-h-screen transition-transform md:translate-x-0">
       <CommonSidebarHeader />
       <div className="overflow-hidden relative">
         <div className="bg-black/50 h-screen w-full absolute z-10">
           <div className="flex flex-col items-center justify-center h-full">
-            <h1 className="font-raleway text-2xl font-semibold">Hello, I Am</h1>
-            <h1 className="text-5xl font-roboto font-bold uppercase">
+            <h1 className="font-raleway md:text-2xl font-semibold">
+              Hello, I Am
+            </h1>
+            <h1 className="text-xl mg:text-2xl lg:text-5xl font-roboto font-bold uppercase">
               Nur Hossain Farid
             </h1>
             <div className="flex justify-center items-center gap-2">

@@ -22,7 +22,7 @@ import { AvatarMenu } from "./AvatarMenu";
 const Navbar = ({ session }: { session: UserInfoProps | null }) => {
   const [hovered, setHovered] = useState<string | null>(null);
   return (
-    <div className="h-20 flex justify-between items-center p-4 bg-gray-800 text-white">
+    <div className="lg:h-20 flex lg:flex-row flex-col gap-5 justify-between items-center p-4 bg-gray-800 text-white">
       <div className="flex items-center gap-2 border-2 border-gray-500 rounded-lg p-2 shadow-sm">
         <Input
           type="text"

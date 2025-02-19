@@ -7,9 +7,9 @@ import { ReactNode } from "react";
 const CommonLayout = async ({ children }: { children: ReactNode }) => {
   const session = await getServerSession(authOptions);
   return (
-    <div className="">
+    <div className="flex lg:flex-row flex-col">
       <CommonSidebar />
-      <div className="ml-96 lg:ml-[600px]">
+      <div className="md:ml-96 lg:ml-[600px]">
         <Navbar session={session} />
         {children}
       </div>

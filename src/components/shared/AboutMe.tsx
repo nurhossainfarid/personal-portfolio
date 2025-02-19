@@ -21,7 +21,7 @@ const AboutMe = () => {
         </h1>
         <hr className="border-primary/50" />
       </div>
-      <div className="flex gap-10 py-5">
+      <div className="flex flex-col lg:flex-row gap-10 py-5">
         <div className="flex flex-col gap-2">
           <Image
             src="https://res.cloudinary.com/duoa4oiur/image/upload/v1739204946/pic_r53qy7.png"
@@ -81,7 +81,7 @@ const AboutMe = () => {
               <Button>Close</Button>
             </CollapsibleTrigger>
           </Collapsible>
-          <div className="flex  gap-10">
+          <div className="flex lg:flex-row flex-col gap-10">
             <div className="flex gap-2 font-raleway font-bold">
               <Mail className="text-primary" />
               faahsan1516@gmail.com
