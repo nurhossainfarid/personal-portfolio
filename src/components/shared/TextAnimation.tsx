@@ -9,7 +9,12 @@ export default function TextAnimation() {
         {" "}
         <Typewriter
           options={{
-            strings: ["Developer", "Designer", "Innovator", "Tech Enthusiast"],
+            strings: [
+              "Developer",
+              "Data Analyst",
+              "Innovator",
+              "Tech Enthusiast",
+            ],
             autoStart: true,
             loop: true,
             delay: 75,

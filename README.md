@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio
 
-## Getting Started
+![My Portfolio](https://res.cloudinary.com/duoa4oiur/image/upload/v1739951865/my_portfolio_isz7nb.png)
 
-First, run the development server:
+This is my personal portfolio website showcasing my skills, projects, and experience as a Junior MERN Stack Developer. It highlights my expertise in web development, data science, and website security. The site provides insights into my background, projects, and professional journey, offering visitors an interactive way to explore my work 🚀
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### Live Deployment Link: https://personal-portfolio-client-nu.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Backend Github: https://github.com/nurhossainfarid/personal-portfolio-backend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Backend Deployment Link: https://personal-portfolio-backend-ochre.vercel.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Video Explanation (Public Link): https://www.loom.com/share/1d4c7879e45f4df09eed270eb00b92cd?sid=955cae65-3862-4476-b10c-ba6446b54cdd
 
-## Learn More
+## **Features**
 
-To learn more about Next.js, take a look at the following resources:
+### **1. About Me Section**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- A brief introduction with professional background.
+- Highlights of my expertise in MERN Stack Development, Data Science, and Website Security.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **2. Projects Showcase**
 
-## Deploy on Vercel
+- Displays my top projects with descriptions and live/demo links.
+- Provides a direct link to GitHub repositories for each project.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **3. Skills Section**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Highlights my technical skills including React, Node.js, Express, MongoDB, TypeScript, and more.
+
+### **3. Contact Form**
+
+- Allows visitors to send direct messages.
+- Integrates email notifications for quick responses.
+
+## **Technology Stack**
+
+- **Framework:** [React.js](https://angular.dev/tools/cli)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **API Testing:** [ThunderClient](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
+
+## **Developer guide**
+
+- Clone the project in your local machine
+  ```bash
+   git clone https://github.com/nurhossainfarid/personal-portfolio
+  ```
+- Install all the the dependencies
+  ```bash
+   npm install
+  ```
+- Run Code
+  ```bash
+   npm start
+  ```
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contributions
+
+Feel free to fork this repository, raise issues, and submit pull requests to contribute to this project.
+
+## Contact
+
+For queries, suggestions, or feedback, please contact:
+Nur Hossain Farid
+Email: faahsan1516@gmai.com
+GitHub: github.com/nurhossainfarid

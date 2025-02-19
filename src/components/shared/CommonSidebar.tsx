@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const CommonSidebar = () => {
   return (
-    <div className="lg:fixed bg-black text-white w-96 lg:w-[600px] lg:min-h-screen transition-transform md:translate-x-0">
+    <div className="lg:fixed bg-black text-white w-96 lg:w-[600px] md:min-h-screen transition-transform md:translate-x-0">
       <CommonSidebarHeader />
       <div className="overflow-hidden relative">
         <div className="bg-black/50 h-screen w-full absolute z-10">
@@ -20,7 +20,7 @@ const CommonSidebar = () => {
             </h1>
             <div className="flex justify-center items-center gap-2">
               <h1 className="font-raleway text-2xl font-semibold">
-                I&#39;m am{" "}
+                I&#39;m a{" "}
               </h1>
               <TextAnimation />
             </div>
